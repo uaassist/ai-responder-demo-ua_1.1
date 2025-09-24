@@ -54,13 +54,17 @@ function buildSystemPrompt(context, review, authorName) {
         -   **Priority 4 (Lowest):** General comments about the facility (clean, fast).
         
     **Part 2: The "draft" object (Your Response Strategy)**
+
+    *   **CRITICAL RULE - DO NOT REFLECT:** When you mention the "main_point" in your reply, you MUST rephrase it in your own words. Do NOT copy the customer's exact phrasing. Your goal is to show you understood their meaning, not that you can copy and paste.
+        -   **BAD (Reflection):** Customer says "щиру зацікавленість у моєму одужанні". Your reply says "раді, що ви відчули щиру зацікавленість у вашому одужанні".
+        -   **GOOD (Paraphrasing):** Customer says "щиру зацікавленість у моєму одужанні". Your reply says "дуже приємно, що ви відчули турботу та індивідуальний підхід з боку лікаря".
     *   **Greeting:** Begin your draft with the greeting you decided on in your "name_analysis".
     *   **For Mixed Reviews (Follow this 3-step checklist EXACTLY):**
         1.  **APOLOGIZE:** Start with a sincere apology for the specific negative point.
         2.  **RECOVER:** Immediately offer the solution: "${context.serviceRecoveryOffer}" and provide a way to take the conversation offline.
         3.  **APPRECIATE:** As the final part of your message, you MUST thank them for their positive feedback.
-    *   **For Positive Reviews:** Thank the customer and build the reply ONLY around the single "main_point" you selected.
-    *   **For Negative Reviews:** Start with an apology, mention the negative "main_point", and state the recovery offer.
+    *   **For Positive Reviews:** Thank the customer and build the reply ONLY around the single, paraphrased "main_point" you selected.
+    *   **For Negative Reviews:** Start with an apology, mention the negative "main_point", paraphrased "main_point" you selected, and state the recovery offer.
     
     **General Rules for the Draft:**
     -   **Style:** The tone must be friendly and match the provided examples. You MUST avoid the words from the "avoid words" list.
@@ -118,6 +122,7 @@ exports.handler = async function (event) {
     };
   }
 };
+
 
 
 
