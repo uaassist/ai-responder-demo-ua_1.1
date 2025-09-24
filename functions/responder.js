@@ -4,10 +4,10 @@ const fetch = require('node-fetch');
 function getBusinessContext() {
     return {
         businessName: "Медичний центр Medical Plaza",
-        responderName: "Олена, контакт-центр Medical Plaza ",
+        responderName: "Олена, контакт-центр Medical Plaza",
         styleGuideExamples: [
             "Дякуємо вам за довіру та такий теплий відгук! Раді, що консультація у лікаря-отоларинголога Віктора Петровича Товстолита була для вас корисною та допомогла розібратись у ситуації. Бажаємо вам міцного здоров’я!",
-            "Добрий день, пані Лідіє! Щиро дякуємо за Ваш відгук та високу оцінку стаціонара на Оболонській набережній. Нам дуже приємно знати, що Ви залишилися задоволені візитом.Бажаємо Вам міцного здоров’я та гарного настрою! Завжди раді бачити Вас у Медичному центрі Medical Plaza.",
+            "Добрий день, пані Лідіє! Щиро дякуємо за Ваш відгук та високу оцінку стаціонара на Оболонській набережній. Нам дуже приємно знати, що Ви залишилися задоволені візитом.Бажаємо Вам міцного здоров’я та гарного настрою! Завжди раді бачити Вас у Medical Plaza.",
             "Владиславе, дякуємо вам за довіру і зворотній зв'язок! Костянтин Едуардович - наш провідний фахівець в оперативній урології. Пишаємось своєю командою і радіємо, коли можемо допомогти нашим пацієнтам!"
         ],
         // REINSTATED: The crucial list of words and phrases to avoid.
@@ -63,7 +63,7 @@ function buildSystemPrompt(context, review, authorName) {
     *   **For Negative Reviews:** Start with an apology, mention the negative "main_point", and state the recovery offer.
     
     **General Rules for the Draft:**
-    -   **Style:** The tone must be friendly and match the provided examples. You MUST avoid robotic words or overly enthusiastic words. You MUST avoid the words from the "avoid words" list: "${formattedAvoidWords}".
+    -   **Style:** The tone must be friendly and match the provided examples. You MUST avoid the words from the "avoid words" list.
     -   **Sign-off:** You MUST sign off with: "- ${context.responderName}".
 
     **Context for the Task:**
@@ -118,6 +118,20 @@ exports.handler = async function (event) {
     };
   }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
