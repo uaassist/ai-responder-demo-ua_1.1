@@ -8,4 +8,5 @@
   status = 200
 
 [functions."responder"]
-  timeout = 25
+  timeout = 35
+
