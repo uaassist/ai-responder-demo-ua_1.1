@@ -63,7 +63,7 @@ function buildSystemPrompt(context, review, authorName) {
     *   **For Negative Reviews:** Start with an apology, mention the negative "main_point", and state the recovery offer.
     
     **General Rules for the Draft:**
-    -   **Style:** The tone must be friendly and match the provided examples. You MUST avoid the words from the "avoid words" list.
+    -   **Style:** The tone must be friendly and match the provided examples. You MUST avoid robotic words or overly enthusiastic words. You MUST avoid the words from the "avoid words" list: "${formattedAvoidWords}".
     -   **Sign-off:** You MUST sign off with: "- ${context.responderName}".
 
     **Context for the Task:**
@@ -118,6 +118,7 @@ exports.handler = async function (event) {
     };
   }
 };
+
 
 
 
